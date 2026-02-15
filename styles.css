@@ -1,0 +1,235 @@
+:root {
+  --bg-1: #fff2cf;
+  --bg-2: #ffd08a;
+  --bg-3: #f06a3f;
+  --ink: #2a140b;
+  --muted: #6f4b3a;
+  --accent: #c45a2c;
+  --orb: #ffe3b3;
+  --orb-glow: rgba(196, 90, 44, 0.35);
+  --scale: 1;
+  --glow: 0.2;
+  font-family: "Cormorant Garamond", "Georgia", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.5), transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.35), transparent 50%),
+    linear-gradient(160deg, var(--bg-1), var(--bg-2) 55%, var(--bg-3));
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.app {
+  width: min(720px, 94vw);
+  display: grid;
+  gap: 20px;
+  padding: 24px 16px 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  font-family: "Work Sans", "Helvetica", sans-serif;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 16px;
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0 0;
+}
+
+.row {
+  display: grid;
+  gap: 6px;
+  font-family: "Work Sans", "Helvetica", sans-serif;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+select,
+input {
+  font-family: "Work Sans", "Helvetica", sans-serif;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #cfd8d2;
+  background: #fff7ea;
+  color: var(--ink);
+}
+
+.toggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: "Work Sans", "Helvetica", sans-serif;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.toggle input {
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+button {
+  font-family: "Work Sans", "Helvetica", sans-serif;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.session {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 28px 0 8px;
+}
+
+.orb {
+  width: min(260px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff7ea, var(--orb));
+  box-shadow: 0 0 calc(70px * var(--glow)) var(--orb-glow);
+  transform: scale(var(--scale));
+  transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
+  animation: sunrise 16s ease-in-out infinite;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.orb-symbol {
+  font-size: clamp(2.4rem, 8vw, 3.4rem);
+  color: rgba(42, 20, 11, 0.65);
+  text-shadow: 0 8px 22px rgba(216, 74, 43, 0.35);
+  line-height: 1;
+  user-select: none;
+}
+
+
+.status {
+  text-align: center;
+}
+
+.phase {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+}
+
+.phase.inhale {
+  color: #d84a2b;
+}
+
+.phase.hold {
+  color: #b3572a;
+}
+
+.phase.exhale {
+  color: #7a2f1b;
+}
+
+.phase.hold_after {
+  color: #9a4d2a;
+}
+
+.timer {
+  font-family: "Work Sans", "Helvetica", sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.cycle {
+  font-family: "Work Sans", "Helvetica", sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.footer {
+  text-align: center;
+  font-family: "Work Sans", "Helvetica", sans-serif;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+
+@media (min-width: 700px) {
+  .app {
+    padding: 32px 20px 48px;
+  }
+
+  .panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .orb {
+    width: min(300px, 50vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb {
+    transition: none;
+    animation: none;
+  }
+}
+
+@keyframes sunrise {
+  0% {
+    background-position: 30% 30%;
+  }
+  50% {
+    background-position: 70% 20%;
+  }
+  100% {
+    background-position: 30% 30%;
+  }
+}

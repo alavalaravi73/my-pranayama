@@ -1,0 +1,80 @@
+[
+  {
+    "id": "box-breathing",
+    "name": "Box Breathing",
+    "description": "Steady, equal phases for focus.",
+    "steps": [
+      { "phase": "inhale", "seconds": 4 },
+      { "phase": "hold", "seconds": 4 },
+      { "phase": "exhale", "seconds": 4 },
+      { "phase": "hold_after", "seconds": 4 }
+    ],
+    "cycles": 6,
+    "ratio": "4:4:4:4",
+    "animation": { "shape": "circle", "scaleMin": 0.9, "scaleMax": 1.2 }
+  },
+  {
+    "id": "calm-468",
+    "name": "Calm 4-6-8",
+    "description": "Longer exhale to relax the nervous system.",
+    "steps": [
+      { "phase": "inhale", "seconds": 4 },
+      { "phase": "hold", "seconds": 6 },
+      { "phase": "exhale", "seconds": 8 },
+      { "phase": "hold_after", "seconds": 2 }
+    ],
+    "cycles": 5,
+    "ratio": "4:6:8:2",
+    "animation": { "shape": "circle", "scaleMin": 0.9, "scaleMax": 1.25 }
+  },
+  {
+    "id": "alternate-nostril",
+    "name": "Alternate Nostril (Simplified)",
+    "description": "Even pacing to stabilize breath.",
+    "steps": [
+      { "phase": "inhale", "seconds": 5 },
+      { "phase": "hold", "seconds": 2 },
+      { "phase": "exhale", "seconds": 5 },
+      { "phase": "hold_after", "seconds": 2 }
+    ],
+    "cycles": 6,
+    "ratio": "5:2:5:2",
+    "animation": { "shape": "circle", "scaleMin": 0.92, "scaleMax": 1.18 }
+  },
+  {
+    "id": "equal-5",
+    "name": "Equal Breath 5",
+    "description": "Balanced inhale and exhale for calm focus.",
+    "steps": [
+      { "phase": "inhale", "seconds": 5 },
+      { "phase": "exhale", "seconds": 5 }
+    ],
+    "cycles": 8,
+    "ratio": "5:5",
+    "animation": { "shape": "circle", "scaleMin": 0.92, "scaleMax": 1.2 }
+  },
+  {
+    "id": "resonant-66",
+    "name": "Resonant 6-6",
+    "description": "Slow breathing to settle the rhythm.",
+    "steps": [
+      { "phase": "inhale", "seconds": 6 },
+      { "phase": "exhale", "seconds": 6 }
+    ],
+    "cycles": 6,
+    "ratio": "6:6",
+    "animation": { "shape": "circle", "scaleMin": 0.9, "scaleMax": 1.22 }
+  },
+  {
+    "id": "ujjayi-soft",
+    "name": "Ujjayi (Soft)",
+    "description": "Gentle oceanic breath with a longer exhale.",
+    "steps": [
+      { "phase": "inhale", "seconds": 4 },
+      { "phase": "exhale", "seconds": 6 }
+    ],
+    "cycles": 7,
+    "ratio": "4:6",
+    "animation": { "shape": "circle", "scaleMin": 0.9, "scaleMax": 1.2 }
+  }
+]

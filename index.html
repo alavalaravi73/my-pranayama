@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pranayama V1</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Pranayama</h1>
+        <p class="subtitle">Minimal breathing practice</p>
+      </header>
+
+      <section class="panel">
+        <div class="row">
+          <label for="technique">Technique</label>
+          <select id="technique"></select>
+        </div>
+        <div class="row">
+          <label for="cycles">Cycles</label>
+          <input id="cycles" type="number" min="1" max="60" value="6" />
+        </div>
+        <button id="start" class="primary">Start</button>
+        <button id="stop" class="ghost" disabled>Stop</button>
+      </section>
+
+      <div class="toolbar">
+        <label class="toggle">
+          <input id="sound" type="checkbox" checked />
+          <span>Sound cues</span>
+        </label>
+      </div>
+
+      <section class="session">
+        <div class="orb" aria-hidden="true">
+          <span class="orb-symbol">ॐ</span>
+        </div>
+        <div class="status">
+          <div class="phase" id="phase">Ready</div>
+          <div class="timer" id="timer">00.0</div>
+          <div class="cycle" id="cycle">Cycle 0 / 0</div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span id="ratio">—</span>
+        <span id="duration">Duration —</span>
+      </footer>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
